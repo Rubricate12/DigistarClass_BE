@@ -1,0 +1,365 @@
+{
+	"info": {
+		"_postman_id": "c6249c4d-30b9-4a1a-9350-fbbc964bdaa7",
+		"name": "User Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38023420"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"1\",\r\n    \"name\": \"clarissa\",\r\n    \"email\": \"clarissa@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"clarissa@example.com\",\r\n    \"password\": \"password12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"John Doe\", \"email\": \"john.doe@example.com\"}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/60c72b2f9b1e8a5f6c8b4567",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"60c72b2f9b1e8a5f6c8b4567"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/users/60c72b2f9b1e8a5f6c8b4567",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"60c72b2f9b1e8a5f6c8b4567"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/search?name=Jane",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Jane"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmRiMjRjMjRkN2E4ODcwYmMwNjQxODIiLCJlbWFpbCI6IndpbGxpYW1AZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDLmxTM1ljRmRZOHRCZGdBT0NFN3kucXlFQzFZb296NlhGM0VUN2c3N1pBeXhrQWtHZHBhcSIsImlhdCI6MTcyNTYzODEwMywiZXhwIjoxNzI1NjM5OTAzfQ.7uRedfAeOJJtg3bBovZxOFpwtzQQ9bOtNCk4WuravCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": \"1\",\r\n    \"email\": \"william@example.com\",\r\n    \"name\": \"bread\", \r\n    \"status\": \"buy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmRiMjRjMjRkN2E4ODcwYmMwNjQxODIiLCJlbWFpbCI6IndpbGxpYW1AZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDLmxTM1ljRmRZOHRCZGdBT0NFN3kucXlFQzFZb296NlhGM0VUN2c3N1pBeXhrQWtHZHBhcSIsImlhdCI6MTcyNTYzODEwMywiZXhwIjoxNzI1NjM5OTAzfQ.7uRedfAeOJJtg3bBovZxOFpwtzQQ9bOtNCk4WuravCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmRiMjRjMjRkN2E4ODcwYmMwNjQxODIiLCJlbWFpbCI6IndpbGxpYW1AZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDLmxTM1ljRmRZOHRCZGdBT0NFN3kucXlFQzFZb296NlhGM0VUN2c3N1pBeXhrQWtHZHBhcSIsImlhdCI6MTcyNTYzODEwMywiZXhwIjoxNzI1NjM5OTAzfQ.7uRedfAeOJJtg3bBovZxOFpwtzQQ9bOtNCk4WuravCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_id\": \"66db27953fe1df4921922ae8\",\r\n    \"email\": \"william@example.com\",\r\n    \"name\": \"drinks\",\r\n    \"status\": \"buy\",\r\n    \"__v\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/orders/66db27953fe1df4921922ae8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"66db27953fe1df4921922ae8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmRiMjRjMjRkN2E4ODcwYmMwNjQxODIiLCJlbWFpbCI6IndpbGxpYW1AZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDLmxTM1ljRmRZOHRCZGdBT0NFN3kucXlFQzFZb296NlhGM0VUN2c3N1pBeXhrQWtHZHBhcSIsImlhdCI6MTcyNTYzODEwMywiZXhwIjoxNzI1NjM5OTAzfQ.7uRedfAeOJJtg3bBovZxOFpwtzQQ9bOtNCk4WuravCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/orders/66db2b5ce3276e7a490dccb7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"66db2b5ce3276e7a490dccb7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmRiMjRjMjRkN2E4ODcwYmMwNjQxODIiLCJlbWFpbCI6IndpbGxpYW1AZXhhbXBsZS5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRDLmxTM1ljRmRZOHRCZGdBT0NFN3kucXlFQzFZb296NlhGM0VUN2c3N1pBeXhrQWtHZHBhcSIsImlhdCI6MTcyNTYzODEwMywiZXhwIjoxNzI1NjM5OTAzfQ.7uRedfAeOJJtg3bBovZxOFpwtzQQ9bOtNCk4WuravCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
